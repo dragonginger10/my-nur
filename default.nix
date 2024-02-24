@@ -14,14 +14,12 @@ rec {
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
 
-  example-package = pkgs.callPackage ./pkgs/example-package { };
   sddm-catppuccin = pkgs.callPackage ./pkgs/sddm-catppuccin {};
   icat = pkgs.callPackage ./pkgs/icat {};
   python-yakh = pkgs.python311Packages.callPackage ./pkgs/python-yakh {};
   beaupy = pkgs.python311Packages.callPackage ./pkgs/beaupy {inherit python-yakh;};
   pyobd = pkgs.python310Packages.callPackage ./pkgs/pyobd {};
   edex-ui = pkgs.callPackage ./pkgs/edex-ui {};
-  zsh-extract = pkgs.callPackage ./pkgs/zsh-extract {};
   tkinterDesigner = pkgs.python311Packages.callPackage ./pkgs/tkinterDesigner {};
   customtkinter = pkgs.callPackage ./pkgs/customtkinter {}; # ...
 }
