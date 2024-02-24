@@ -10,9 +10,9 @@
 
 rec {
   # The `lib`, `modules`, and `overlays` names are special
-  lib = import ./lib { inherit pkgs; }; # functions
-  modules = import ./modules; # NixOS modules
-  overlays = import ./overlays; # nixpkgs overlays
+  # lib = import ./lib { inherit pkgs; }; # functions
+  # modules = import ./modules; # NixOS modules
+  # overlays = import ./overlays; # nixpkgs overlays
 
   sddm-catppuccin = pkgs.callPackage ./pkgs/sddm-catppuccin {};
   icat = pkgs.callPackage ./pkgs/icat {};
