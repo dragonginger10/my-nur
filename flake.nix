@@ -16,13 +16,10 @@
     forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f system);
   in {
     formatter = forAllSystems (system: let pkgs = import nixpkgs {inherit system;}; in pkgs.alejandra);
-    devShells = forAllSystems (system: 
-    let
-      pkgs = import nixpkgs {inherit system;}; 
-    in 
-    {
-      default = import ./shell.nix {inherit pkgs;};
-    });
+    devShells = forAllSystems (system: let
+      pkgs = import nixpkgs {inherit system;};
+    in
+      import ./shell.nix {inherit pkgs;});
 
     legacyPackages = forAllSystems (system:
       import ./default.nix {
