@@ -20,5 +20,5 @@
   tkinterDesigner = pkgs.python311Packages.callPackage ./pkgs/tkinterDesigner {};
   customtkinter = pkgs.callPackage ./pkgs/customtkinter {}; # ...
   razer-nari-profile = pkgs.callPackage ./pkgs/razer-nari-profile {}; #udev rule pkg
-  useles-progress = pkgs.python310Packages.callPackage ./pkgs/useless-progress {};
+  useless-progress = pkgs.python310Packages.callPackage ./pkgs/useless-progress {};
 }
