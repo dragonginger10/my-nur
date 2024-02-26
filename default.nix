@@ -22,5 +22,4 @@
   razer-nari-profile = pkgs.callPackage ./pkgs/razer-nari-profile {}; #udev rule pkg
   useless-progress = pkgs.python310Packages.callPackage ./pkgs/useless-progress {};
   hypixelFlipper = pkgs.python310Packages.callPackage ./pkgs/hypixelFlipper {};
-  fake-compiler = pkgs.callPackage ./pkgs/fake-compiler {};
 }
