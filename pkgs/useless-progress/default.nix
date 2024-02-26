@@ -1,6 +1,8 @@
 {
   buildPythonApplication,
   fetchFromGithub,
+  setuptools,
+  tqdm,
 }: let
   pname = "progbar";
   version = "1.1.4";
