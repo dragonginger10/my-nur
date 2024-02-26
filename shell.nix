@@ -12,6 +12,7 @@
       lua-language-server
       nodePackages.bash-language-server
       statix
+      nix-init
     ];
   };
 }
