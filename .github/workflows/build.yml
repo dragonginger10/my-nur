@@ -31,7 +31,7 @@ jobs:
         # CACHIX_AUTH_TOKEN secret in your repository secrets settings in
         # Github found at
         # https://github.com/<your_githubname>/nur-packages/settings/secrets
-        cachixName:
+        # cachixName:
           # - <YOUR_CACHIX_NAME>
         nixPath:
           - nixpkgs=channel:nixos-unstable
