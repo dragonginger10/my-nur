@@ -2,10 +2,11 @@
   stdenv,
   fetchFromGitHub,
 }: let
-  pname = "sddm-catppuccin";
+  name = "razer-nari-profile";
   version = "0.3";
 in
   stdenv.mkDerivation {
+    inherit name version;
     dontBuild = true;
     installPhase = ''
       mkdir -p $out/share/pulseaudio/alsa-mixer/paths
