@@ -15,7 +15,7 @@ in
       owner = "dragonginger10";
       repo = "useless-progress";
       rev = "v${version}";
-      hash = "";
+      hash = "sha256-Zely1e/kATcRjwXPkCOIt5dXLfhf8x8j41JeBJJZ26g=";
     };
 
     postinstall = ''
