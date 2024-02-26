@@ -1,6 +1,6 @@
 {
   buildPythonApplication,
-  fetchFromGithub,
+  fetchFromGitHub,
   setuptools,
   tqdm,
 }: let
@@ -11,7 +11,7 @@ in
     inherit pname version;
     format = "pyproject";
 
-    src = fetchFromGithub {
+    src = fetchFromGitHub {
       owner = "dragonginger10";
       repo = "useless-progress";
       rev = "v${version}";
