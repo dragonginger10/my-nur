@@ -22,4 +22,5 @@ rec {
   edex-ui = pkgs.callPackage ./pkgs/edex-ui {};
   tkinterDesigner = pkgs.python311Packages.callPackage ./pkgs/tkinterDesigner {};
   customtkinter = pkgs.callPackage ./pkgs/customtkinter {}; # ...
+  razer-nari-profile = pkgs.callPackage ./pkgs/razer-nari-profile {}; #udev rule pkg
 }
