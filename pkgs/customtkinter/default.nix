@@ -1,9 +1,9 @@
-{ lib
-, python3
-, fetchFromGitHub
-, tk
+{
+  lib,
+  python3,
+  fetchFromGitHub,
+  tk,
 }:
-
 python3.pkgs.buildPythonApplication rec {
   pname = "custom-tkinter";
   version = "5.2.2";
@@ -21,14 +21,16 @@ python3.pkgs.buildPythonApplication rec {
     python3.pkgs.wheel
   ];
 
-  propagatedBuildInputs = with python3.pkgs; [
-    darkdetect
-    packaging
-    typing-extensions
-    tkinter
-  ] ++ [tk];
+  propagatedBuildInputs = with python3.pkgs;
+    [
+      darkdetect
+      packaging
+      typing-extensions
+      tkinter
+    ]
+    ++ [tk];
 
-  pythonImportsCheck = [ "customtkinter" ];
+  pythonImportsCheck = ["customtkinter"];
 
   meta = with lib; {
     description = "A modern and customizable python UI-library based on Tkinter";

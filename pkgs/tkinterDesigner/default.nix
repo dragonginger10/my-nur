@@ -5,7 +5,7 @@
   requests,
   jinja2,
   pillow,
-  urllib3
+  urllib3,
 }:
 buildPythonPackage rec {
   version = "1.0.7";
