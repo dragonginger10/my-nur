@@ -13,7 +13,7 @@
       "armv6l-linux"
       "armv7l-linux"
     ];
-    forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f system);
+    forAllSystems = f: nixpkgs.lib.genAttrs systems f;
   in {
     formatter = forAllSystems (system: let pkgs = import nixpkgs {inherit system;}; in pkgs.alejandra);
     devShells = forAllSystems (system: let
