@@ -35,4 +35,8 @@ in
     ];
 
     doCheck = false;
+
+    meta = {
+      broken = true;
+    };
   }
