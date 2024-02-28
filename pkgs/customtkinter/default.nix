@@ -37,7 +37,6 @@ python3.pkgs.buildPythonApplication rec {
     homepage = "https://github.com/TomSchimansky/CustomTkinter";
     changelog = "https://github.com/TomSchimansky/CustomTkinter/blob/${src.rev}/CHANGELOG.md";
     license = licenses.mit;
-    maintainers = with maintainers; [dragonginger];
     mainProgram = "custom-tkinter";
   };
 }
