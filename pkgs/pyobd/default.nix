@@ -9,7 +9,7 @@
   pint,
   setuptools,
 }: let
-  version = "1.0.0";
+  version = "main";
   pname = "pyobd";
 in
   buildPythonPackage {
@@ -20,8 +20,8 @@ in
     src = fetchFromGitHub {
       owner = "dragonginger10";
       repo = pname;
-      rev = "v${version}";
-      hash = "sha256-fbS+TmXmS805N42e9vQu4VwxwFu9jUWIcXgB8kQL6K4=";
+      rev = "${version}";
+      hash = "sha256-XDn6u7butvH7YBiqeyTDeH5u6JPsnUzxEqpzfPw/ok0=";
     };
 
     nativeBuildInputs = [setuptools];
