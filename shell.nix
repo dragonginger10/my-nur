@@ -6,6 +6,7 @@
       nix
       statix
       nix-init
+      nix-update
     ];
   };
 }
