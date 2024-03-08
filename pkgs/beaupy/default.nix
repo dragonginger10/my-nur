@@ -24,5 +24,7 @@ buildPythonPackage rec {
 
   propagatedBuildInputs = [rich emoji python-yakh];
 
-  doCheck = false;
+  pythonImportsCheck = ["beaupy"];
+
+  # doCheck = false;
 }
