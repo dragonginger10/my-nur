@@ -22,9 +22,14 @@ python3.pkgs.buildPythonApplication rec {
 
   propagatedBuildInputs = with python3.pkgs; [
     pulsectl
-    pygobject
+    pygobject3
     setuptools
-  ];
+  ] ++ (with pkgs; [
+    gtk3
+    libpulseaudio
+    gobject-introspection
+    libappindicator-gtk3
+  ]);
 
 
   meta = with lib; {
