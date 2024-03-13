@@ -24,4 +24,5 @@
   hypixelFlipper = pkgs.python310Packages.callPackage ./pkgs/hypixelFlipper {};
   # pulsemeeter = pkgs.callPackage ./pkgs/pulsemeeter {};
   bookbinder = pkgs.callPackage ./pkgs/bookbinder {jre = pkgs.jre8;};
+  discover = pkgs.callPackage ./pkgs/discover {};
 }
