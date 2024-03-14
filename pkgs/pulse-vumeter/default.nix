@@ -20,7 +20,7 @@ stdenv.mkDerivation rec {
   meta = with lib; {
     description = "A cli vumeter for pulseaudio";
     homepage = "https://github.com/theRealCarneiro/pulse-vumeter";
-    license = licenses.unfree; # FIXME: nix-init did not found a license
+    # license = licenses.unfree; # FIXME: nix-init did not found a license
     maintainers = with maintainers; [];
     mainProgram = "pulse-vumeter";
     platforms = platforms.all;

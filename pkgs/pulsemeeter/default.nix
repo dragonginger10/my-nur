@@ -7,7 +7,6 @@
   libpulseaudio,
   gobject-introspection,
   wrapGAppsHook,
-  pulse-vumeter,
 }:
 python3.pkgs.buildPythonApplication rec {
   pname = "pulsemeeter";
