@@ -1,11 +1,11 @@
-{ lib
-, python3
-, fetchFromGitHub
-, gtk3
-, gobject-introspection
-, wrapGAppsHook
+{
+  lib,
+  python3,
+  fetchFromGitHub,
+  gtk3,
+  gobject-introspection,
+  wrapGAppsHook,
 }:
-
 python3.pkgs.buildPythonApplication rec {
   pname = "discover";
   version = "0.7.0";
@@ -40,5 +40,5 @@ python3.pkgs.buildPythonApplication rec {
     pillow
     xlib
   ];
-  doCheck = false;    
+  doCheck = false;
 }
