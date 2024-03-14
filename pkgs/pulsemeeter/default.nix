@@ -20,7 +20,7 @@ python3.pkgs.buildPythonApplication rec {
     hash = "sha256-QTXVE5WvunsjLS8I1rgX34BW1mT1UY+cRxURwXiQp5A=";
   };
 
-  buildInputs = [gtk3 libappindicator libpulseaudio];
+  buildInputs = [gtk3 libappindicator libpulseaudio pulse-vumeter];
 
   nativeBuildInputs = [wrapGAppsHook gobject-introspection];
 
