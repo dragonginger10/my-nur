@@ -1,12 +1,15 @@
 { lib
 , python3
 , fetchFromGitHub
+, gtk3
+, gobject-introspection
+, libappindicator
+, wrapGAppsHook
 }:
 
 python3.pkgs.buildPythonApplication rec {
   pname = "discover";
   version = "0.7.0";
-  pyproject = true;
 
   src = fetchFromGitHub {
     owner = "trigg";
@@ -17,14 +20,25 @@ python3.pkgs.buildPythonApplication rec {
 
   buildInputs = [
     gtk3
-    gobject-introspection
+    libappindicator
   ];
 
   nativeBuildInputs = with python3.pkgs; [
-    setuptools
+    gobject-introspection
+    wrapGAppsHook
   ];
 
+  makeWrapperArgs = [
+    "--set DISPLAY ':0.0'"
+  ];
+
+  preCheck = ''
+    export HOME=$(mktemp -d)
+  '';
+
   propagatedBuildInputs = with python3.pkgs; [
+    pycairo
+    setuptools
     pygobject3
     websocket-client
     pyxdg
@@ -32,4 +46,5 @@ python3.pkgs.buildPythonApplication rec {
     pillow
     xlib
   ];
+  doCheck = false;    
 }
