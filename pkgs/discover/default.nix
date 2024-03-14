@@ -21,7 +21,7 @@ python3.pkgs.buildPythonApplication rec {
     gtk3
   ];
 
-  nativeBuildInputs = with python3.pkgs; [
+  nativeBuildInputs = [
     gobject-introspection
     wrapGAppsHook
   ];

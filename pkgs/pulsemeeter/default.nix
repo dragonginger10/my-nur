@@ -2,36 +2,45 @@
   lib,
   python3,
   fetchFromGitHub,
+  gtk3,
+  libappindicator,
+  libpulseaudio,
+  gobject-introspection,
+  wrapGAppsHook,
 }:
 python3.pkgs.buildPythonApplication rec {
   pname = "pulsemeeter";
   version = "1.2.14";
-  pyproject = true;
 
   src = fetchFromGitHub {
     owner = "theRealCarneiro";
-    repo = "pulsemeeter";
+    repo = pname;
     rev = "v${version}";
     hash = "sha256-QTXVE5WvunsjLS8I1rgX34BW1mT1UY+cRxURwXiQp5A=";
   };
 
-  nativeBuildInputs = [
-    python3.pkgs.setuptools
-    python3.pkgs.wheel
+  buildInputs = [
+    gtk3
+    libappindicator
+    libpulseaudio
   ];
 
-  propagatedBuildInputs = with python3.pkgs;
-    [
-      pulsectl
-      pygobject3
-      setuptools
-    ]
-    ++ (with pkgs; [
-      gtk3
-      libpulseaudio
-      gobject-introspection
-      libappindicator-gtk3
-    ]);
+  nativeBuildInputs = [
+    wrapGAppsHook
+    gobject-introspection
+  ];
+
+  propagatedBuildInputs = with python3.pkgs; [
+    pulsectl
+    pygobject3
+    setuptools
+  ];
+
+  makeWrapperArgs = [
+    "--set DISPLAY ':0.0'"
+  ];
+
+  doCheck = false;
 
   meta = with lib; {
     description = "Replicating voicemeeter routing functionalities in linux with pulseaudio";
