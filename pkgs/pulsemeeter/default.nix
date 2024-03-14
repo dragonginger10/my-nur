@@ -7,6 +7,7 @@
   libpulseaudio,
   gobject-introspection,
   wrapGAppsHook,
+  pulse-vumeter,
 }:
 python3.pkgs.buildPythonApplication rec {
   pname = "pulsemeeter";
@@ -19,26 +20,13 @@ python3.pkgs.buildPythonApplication rec {
     hash = "sha256-QTXVE5WvunsjLS8I1rgX34BW1mT1UY+cRxURwXiQp5A=";
   };
 
-  buildInputs = [
-    gtk3
-    libappindicator
-    libpulseaudio
-  ];
+  buildInputs = [gtk3 libappindicator libpulseaudio];
 
-  nativeBuildInputs = [
-    wrapGAppsHook
-    gobject-introspection
-  ];
+  nativeBuildInputs = [wrapGAppsHook gobject-introspection];
 
-  propagatedBuildInputs = with python3.pkgs; [
-    pulsectl
-    pygobject3
-    setuptools
-  ];
+  propagatedBuildInputs = with python3.pkgs; [pulsectl pygobject3 setuptools];
 
-  makeWrapperArgs = [
-    "--set DISPLAY ':0.0'"
-  ];
+  makeWrapperArgs = ["--set DISPLAY ':0.0'"];
 
   doCheck = false;
 

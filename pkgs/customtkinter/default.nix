@@ -16,19 +16,10 @@ python3.pkgs.buildPythonApplication rec {
     hash = "sha256-1g2wdXbUv5xNnpflFLXvU39s16kmwvuegKWd91E3qm4=";
   };
 
-  nativeBuildInputs = with python3.pkgs; [
-    setuptools
-    wheel
-  ];
+  nativeBuildInputs = with python3.pkgs; [setuptools wheel];
 
   propagatedBuildInputs = with python3.pkgs;
-    [
-      darkdetect
-      packaging
-      typing-extensions
-      tkinter
-    ]
-    ++ [tk];
+    [darkdetect packaging typing-extensions tkinter] ++ [tk];
 
   pythonImportsCheck = ["customtkinter"];
 

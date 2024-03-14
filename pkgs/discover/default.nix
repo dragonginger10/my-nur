@@ -17,18 +17,11 @@ python3.pkgs.buildPythonApplication rec {
     hash = "sha256-//QW6N87Uhm2aH0RSuykHG3+EfzYSHOcSNLSn1y0rFw=";
   };
 
-  buildInputs = [
-    gtk3
-  ];
+  buildInputs = [gtk3];
 
-  nativeBuildInputs = [
-    gobject-introspection
-    wrapGAppsHook
-  ];
+  nativeBuildInputs = [gobject-introspection wrapGAppsHook];
 
-  makeWrapperArgs = [
-    "--set DISPLAY ':0.0'"
-  ];
+  makeWrapperArgs = ["--set DISPLAY ':0.0'"];
 
   propagatedBuildInputs = with python3.pkgs; [
     pycairo

@@ -26,17 +26,9 @@ in
 
     nativeBuildInputs = [setuptools];
 
-    propagatedBuildInputs = [
-      wxPython_4_2
-      numpy
-      pyserial
-      tornado
-      pint
-    ];
+    propagatedBuildInputs = [wxPython_4_2 numpy pyserial tornado pint];
 
     doCheck = false;
 
-    meta = {
-      broken = true;
-    };
+    meta = {broken = true;};
   }

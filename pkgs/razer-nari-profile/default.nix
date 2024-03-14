@@ -25,7 +25,5 @@ in
       sha256 = "1lg10dyxgz080qfcp6k3zk6374jlj067s6p5fgx5r135ivy8mrki";
     };
 
-    meta = {
-      broken = true;
-    };
+    meta = {broken = true;};
   }

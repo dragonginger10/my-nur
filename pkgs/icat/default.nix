@@ -18,10 +18,7 @@ in
       sha256 = "sha256-aiLPVdKSppT/PWPW0Ue475WG61pBLh8OtLuk2/UU3nM=";
     };
 
-    buildInputs = [
-      imlib2
-      xorg.libX11
-    ];
+    buildInputs = [imlib2 xorg.libX11];
 
     installPhase = ''
       runHook preInstall

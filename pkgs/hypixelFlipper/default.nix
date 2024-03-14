@@ -22,10 +22,5 @@ in
     };
 
     nativeBuildInputs = [setuptools];
-    propagatedBuildInputs = [
-      requests
-      pandas
-      rich
-      typer
-    ];
+    propagatedBuildInputs = [requests pandas rich typer];
   }

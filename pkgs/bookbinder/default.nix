@@ -18,9 +18,7 @@ in
 
     nativeBuildInputs = [makeWrapper];
 
-    propagatedBuildInputs = [
-      gnome.gnome-themes-extra
-    ];
+    propagatedBuildInputs = [gnome.gnome-themes-extra];
 
     installPhase = ''
       mkdir -pv $out/share/java $out/bin
