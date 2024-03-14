@@ -3,7 +3,6 @@
 , fetchFromGitHub
 , gtk3
 , gobject-introspection
-, libappindicator
 , wrapGAppsHook
 }:
 
@@ -20,7 +19,6 @@ python3.pkgs.buildPythonApplication rec {
 
   buildInputs = [
     gtk3
-    libappindicator
   ];
 
   nativeBuildInputs = with python3.pkgs; [
@@ -31,10 +29,6 @@ python3.pkgs.buildPythonApplication rec {
   makeWrapperArgs = [
     "--set DISPLAY ':0.0'"
   ];
-
-  preCheck = ''
-    export HOME=$(mktemp -d)
-  '';
 
   propagatedBuildInputs = with python3.pkgs; [
     pycairo
