@@ -12,18 +12,14 @@
   # overlays = import ./overlays; # nixpkgs overlays
 
   sddm-catppuccin = pkgs.callPackage ./pkgs/sddm-catppuccin {};
-  icat = pkgs.callPackage ./pkgs/icat {};
   python-yakh = pkgs.python311Packages.callPackage ./pkgs/python-yakh {};
   beaupy = pkgs.python311Packages.callPackage ./pkgs/beaupy {inherit python-yakh;};
   pyobd = pkgs.python310Packages.callPackage ./pkgs/pyobd {};
   edex-ui = pkgs.callPackage ./pkgs/edex-ui {};
-  tkinterDesigner = pkgs.python311Packages.callPackage ./pkgs/tkinterDesigner {};
   customtkinter = pkgs.callPackage ./pkgs/customtkinter {}; # ...
   razer-nari-profile = pkgs.callPackage ./pkgs/razer-nari-profile {}; #udev rule pkg
   useless-progress = pkgs.python310Packages.callPackage ./pkgs/useless-progress {};
   hypixelFlipper = pkgs.python310Packages.callPackage ./pkgs/hypixelFlipper {};
-  pulsemeeter = pkgs.callPackage ./pkgs/pulsemeeter {};
   bookbinder = pkgs.callPackage ./pkgs/bookbinder {jre = pkgs.jre8;};
   discover = pkgs.callPackage ./pkgs/discover {};
-  pulse-vumeter = pkgs.callPackage ./pkgs/pulse-vumeter {};
 }
