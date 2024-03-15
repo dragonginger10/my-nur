@@ -2,16 +2,18 @@
   stdenv,
   fetchFromGitHub,
 }: let
-  name = "razer-nari-profile";
+  pname = "razer-nari-profile";
   version = "1.1";
 in
   stdenv.mkDerivation {
-    inherit name version;
+    inherit pname version;
     dontBuild = true;
+
     installPhase = ''
       mkdir -p $out/share/alsa-card-profile/mixer/paths
       mkdir -p $out/share/alsa-card-profile/mixer/profile-sets
       mkdir -p $out/lib/udev/rules.d
+
       cp $src/razer-nari-input.conf $out/share/alsa-card-profile/mixer/paths
       cp $src/razer-nari-output-{game,chat}.conf $out/share/alsa-card-profile/mixer/paths
       cp $src/razer-nari-usb-audio.conf $out/share/alsa-card-profile/mixer/profile-sets
