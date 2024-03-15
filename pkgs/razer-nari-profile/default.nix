@@ -8,16 +8,12 @@ in
   stdenv.mkDerivation {
     inherit pname version;
     dontBuild = true;
+    phases = ["installPhase"];
 
     installPhase = ''
-      mkdir -p $out/share/alsa-card-profile/mixer/paths
-      mkdir -p $out/share/alsa-card-profile/mixer/profile-sets
-      mkdir -p $out/lib/udev/rules.d
-
-      cp $src/razer-nari-input.conf $out/share/alsa-card-profile/mixer/paths
-      cp $src/razer-nari-output-{game,chat}.conf $out/share/alsa-card-profile/mixer/paths
-      cp $src/razer-nari-usb-audio.conf $out/share/alsa-card-profile/mixer/profile-sets
-      cp $src/91-pulseaudio-razer-nari.rules $out/lib/udev/rules.d
+      install -Dm644 -t "$out/share/alsa-card-profile/mixer/paths/" $src/razer-nari-{input,output-{game,chat}}.conf
+      install -Dm644 -t "$out/share/alsa-card-profile/mixer/profile-sets/" $src/razer-nari-usb-audio.conf
+      install -Dm644 -t "$out/lib/udev/rules.d/" $src/91-pulseaudio-razer-nari.rules
     '';
 
     src = fetchFromGitHub {
