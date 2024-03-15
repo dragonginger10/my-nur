@@ -3,7 +3,8 @@
   fetchzip,
   jre,
   makeWrapper,
-  gnome,
+  gtk3,
+  wrapGAppsHook,
 }: let
   name = "bookbinder";
   version = "3.0";
@@ -16,9 +17,9 @@ in
       hash = "sha256-s5EQY49s1sYe//z8ZGdmL8VQNWxc+lyYbPtj6YKQx70=";
     };
 
-    nativeBuildInputs = [makeWrapper];
+    nativeBuildInputs = [makeWrapper wrapGAppsHook];
 
-    propagatedBuildInputs = [gnome.gnome-themes-extra];
+    buildInputs = [gtk3];
 
     installPhase = ''
       mkdir -pv $out/share/java $out/bin
