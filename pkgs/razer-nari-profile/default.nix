@@ -3,7 +3,7 @@
   fetchFromGitHub,
 }: let
   name = "razer-nari-profile";
-  version = "0.3";
+  version = "1.1";
 in
   stdenv.mkDerivation {
     inherit name version;
@@ -12,18 +12,16 @@ in
       mkdir -p $out/share/pulseaudio/alsa-mixer/paths
       mkdir -p $out/share/pulseaudio/alsa-mixer/profile-sets
       mkdir -p $out/lib/udev/rulse.d
-      cp -aR $src/razer-nari-input.conf $out/share/pulseaudio/alsa-mixer/paths
-      cp -aR $src/razer-nari-output-{game,chat}.conf $out/share/pulseaudio/alsa-mixer/paths
-      cp -aR $src/razer-nari-usb-audio.conf $out/share/pulseaudio/alsa-mixer/profile-sets
-      cp -aR $src/91-pulseaudio-razer-nari.rules /lib/udev/rules.d
+      cp $src/razer-nari-input.conf $out/share/pulseaudio/alsa-mixer/paths
+      cp $src/razer-nari-output-{game,chat}.conf $out/share/pulseaudio/alsa-mixer/paths
+      cp $src/razer-nari-usb-audio.conf $out/share/pulseaudio/alsa-mixer/profile-sets
+      cp $src/91-pulseaudio-razer-nari.rules $out/lib/udev/rules.d
     '';
 
     src = fetchFromGitHub {
-      owner = "imustafin";
-      repo = "razer-nari-pulseaudio-profile";
+      owner = "mrquantumoff";
+      repo = "razer-nari-pipewire-profile";
       rev = "v${version}";
-      sha256 = "1lg10dyxgz080qfcp6k3zk6374jlj067s6p5fgx5r135ivy8mrki";
+      hash = "sha256-tufGxESIToWmcOWh+B8sGZF0IAQv9TRXhzoZfyqa59g=";
     };
-
-    meta = {broken = true;};
-  }
+}
