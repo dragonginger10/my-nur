@@ -8,13 +8,13 @@
 }:
 python3.pkgs.buildPythonApplication rec {
   pname = "discover";
-  version = "0.7.0";
+  version = "0.7.1";
 
   src = fetchFromGitHub {
     owner = "trigg";
     repo = "Discover";
     rev = "v${version}";
-    hash = "sha256-//QW6N87Uhm2aH0RSuykHG3+EfzYSHOcSNLSn1y0rFw=";
+    hash = "sha256-4x2JERWSdqPXMRlH1vesxy9tqqRzkNHpZ8ECuHftgi8=";
   };
 
   buildInputs = [gtk3];
